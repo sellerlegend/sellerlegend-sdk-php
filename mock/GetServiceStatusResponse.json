@@ -1,0 +1,6 @@
+{
+    "status": "Success",
+    "code": 200,
+    "message": "Active",
+    "path": "api\/service-status"
+}

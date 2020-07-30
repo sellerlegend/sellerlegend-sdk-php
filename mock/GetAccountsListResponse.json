@@ -1,0 +1,48 @@
+{
+    "status": "Success",
+    "code": 200,
+    "message": "Accounts List",
+    "path": "api\/accounts-list",
+    "accounts": [
+        {
+            "id": 100000,
+            "country_code": "US",
+            "currency_code": "USD",
+            "timezone": "America\/Los_Angeles",
+            "marketplace": "ATVPDKIKX0DER",
+            "seller_id": "<SELLER-ID>"
+        },
+        {
+            "id": 100001,
+            "country_code": "UK",
+            "currency_code": "GBP",
+            "timezone": "Europe\/Paris",
+            "marketplace": "A1F83G8C2ARO7P",
+            "seller_id": "<SELLER-ID>"
+        },
+        {
+            "id": 100002,
+            "country_code": "DE",
+            "currency_code": "EUR",
+            "timezone": "Europe\/Paris",
+            "marketplace": "A1PA6795UKMFR9",
+            "seller_id": "<SELLER-ID>"
+        },
+        {
+            "id": 100003,
+            "country_code": "ES",
+            "currency_code": "EUR",
+            "timezone": "Europe\/Paris",
+            "marketplace": "A1RKKUPIHCS9HS",
+            "seller_id": "<SELLER-ID>"
+        },
+        {
+            "id": 100004,
+            "country_code": "FR",
+            "currency_code": "EUR",
+            "timezone": "Europe\/Paris",
+            "marketplace": "A13V1IB3VIYZZH",
+            "seller_id": "<SELLER-ID>"
+        }
+    ]
+}

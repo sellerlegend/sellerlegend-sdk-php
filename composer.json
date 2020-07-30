@@ -1,0 +1,29 @@
+{
+  "name": "sellerlegend/sellerlegend-sdk-php",
+  "homepage": "https://sellerlegend.com/",
+  "keywords": ["sellerlegend", "laravel"],
+  "description": "Official SellerLegend SDK for Laravel applications",
+  "authors": [
+    {
+      "name": "SellerLegend",
+      "homepage": "https://sellerlegend.com/"
+    }
+  ],
+  "support": {
+    "email": "support@sellerlegend.com",
+    "issues": "https://github.com/sellerlegend/sellerlegend-sdk-php/issues"
+  },
+  "require": {
+    "php": ">=7.1.*",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-zlib": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SellerLegend\\Reports\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
