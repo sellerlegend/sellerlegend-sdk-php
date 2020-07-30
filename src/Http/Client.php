@@ -18,7 +18,7 @@ class Client {
     private $endpoint;
     private $authUrl = "/oauth/authorize";
     private $tokenUrl = "/oauth/token";
-    private $version = "0.1.1";
+    private $version = "0.1.2";
     private $userAgent;
 
     public function __construct($config) {
