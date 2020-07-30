@@ -17,6 +17,9 @@ ZLIB >= 7.2
 [Access Request](http://docs.sellerlegend.com)<br/>
 [Getting Started](http://docs.sellerlegend.com)
 
+## License
+The MIT License (MIT). Please see License File for more information.
+
 ## Installation
 
 The recommended way to install sellerlegend-sdk-php is through Composer:
