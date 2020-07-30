@@ -14,7 +14,7 @@
     "issues": "https://github.com/sellerlegend/sellerlegend-sdk-php/issues"
   },
   "require": {
-    "php": ">=7.1.*",
+    "php": "^7.1",
     "ext-curl": "*",
     "ext-json": "*",
     "ext-zlib": "*"
