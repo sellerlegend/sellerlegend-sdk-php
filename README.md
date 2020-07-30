@@ -157,7 +157,7 @@ $response = $client->getReportStatus($report_id);
 ```
 
 ### Get Report
-Retrieves `;` delimited csv report content.
+Retrieves `,` delimited csv report content.
 
 ```
 $report_id = 7xxxxx;
