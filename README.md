@@ -6,10 +6,10 @@ Official SellerLegend SDK for Laravel applications.
 
 ## Requirements
 
-PHP >= 7.1<br/>
-CURL >= 7.2<br/>
-JSON >= 1.6<br/>
-ZLIB >= 7.2
+php: ^7.1<br/>
+ext-curl: *<br/>
+ext-json: *<br/>
+ext-zlib: *<br/>
 
 ## Documentation
 
