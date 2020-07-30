@@ -11,34 +11,25 @@ class Client {
         "client_secret" => null,
         "access_token"  => null,
         "refresh_token" => null,
-        "app_version"   => null,
+        "api_endpoint"  => null,
         "redirect"      => null
     ];
 
     private $endpoint;
     private $authUrl = "/oauth/authorize";
     private $tokenUrl = "/oauth/token";
-    private $defaultVersion = "v1";
-    private $resellerConfig;
+    private $version = "0.1.1";
     private $userAgent;
 
     public function __construct($config) {
         $this->config = $config;
 
-        $versions = new Versions();
+        $this->_validateConfig($this->config);
 
-        if (!isset($config["app_version"])) {
-            $config["app_version"] = $this->defaultVersion;
-        }
-
-        $this->resellerConfig = $versions->resellerConfig[$config["app_version"]];
-        $this->userAgent = "SellerLegend-Reports-API PHP Client Library {$this->resellerConfig["reseller"]}";
-        $this->endpoint = $this->resellerConfig["endpoint"];
-
+        $this->userAgent = "SellerLegend-SDK PHP Client Library {$this->version}";
+        $this->endpoint = $this->config["api_endpoint"];
         $this->authUrl = $this->endpoint . $this->authUrl;
         $this->tokenUrl = $this->endpoint . $this->tokenUrl;
-
-        $this->_validateConfig($config);
 
         if (is_null($this->config["access_token"]) && !is_null($this->config["refresh_token"])) {
             /* convenience */

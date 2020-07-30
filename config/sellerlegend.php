@@ -24,7 +24,15 @@ return [
      * This is the path of SellerLegend API consuming app - your app
      * The redirect-path here should match the one you specified at SellerLegend's interface
      */
-    'redirect' => env('SL_REDIRECT', 'http://your-app.com/'),
+    'redirect' => env('SL_REDIRECT', 'https://your-app.com'),
+
+    /**
+     * The SellerLegend application endpoint
+     *
+     * The default endpoint is https://app.sellerlegend.com
+     * The users of application's retail version do not need to modify endpoint
+     */
+    'api_endpoint' => env('SL_API_ENDPOINT', 'https://app.sellerlegend.com'),
 
     /**
      * The ACCESS-TOKEN issued by SellerLegend
@@ -42,13 +50,5 @@ return [
      * This parameter is not required until your access token has not not been revoked
      *
      */
-    'refresh_token' => env('SL_REFRESH_TOKEN', null),
-
-    /**
-     * The version of SellerLegend application you're using
-     *
-     * By default this is set to 'v1' - the retail version of SellerLegend
-     * Please contact support <support@sellerlegend.com> if you are not sure of the version
-     */
-    'app_version' => env('SL_APP_VERSION', 'v1'),
+    'refresh_token' => env('SL_REFRESH_TOKEN', null)
 ];

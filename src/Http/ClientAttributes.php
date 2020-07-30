@@ -4,7 +4,7 @@ namespace SellerLegend\Reports\Http;
 
 trait ClientAttributes {
 
-    private function _validateConfig($config) {
+    private function _validateConfig(&$config) {
         if (is_null($config)) {
             throw new \Exception("'config' cannot be null.");
         }
@@ -15,6 +15,10 @@ trait ClientAttributes {
             } else {
                 throw new \Exception("Unknown parameter '{$key}' in config.");
             }
+        }
+
+        if (!isset($config["api_endpoint"])) {
+            $config["api_endpoint"] = "https://app.sellerlegend.com";
         }
 
         return true;
