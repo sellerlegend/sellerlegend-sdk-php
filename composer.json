@@ -1,8 +1,9 @@
 {
   "name": "sellerlegend/sellerlegend-sdk-php",
+  "description": "Official SellerLegend SDK for Laravel applications",
   "homepage": "https://sellerlegend.com/",
   "keywords": ["sellerlegend", "laravel"],
-  "description": "Official SellerLegend SDK for Laravel applications",
+  "type": "library",
   "license": "MIT",
   "authors": [
     {
