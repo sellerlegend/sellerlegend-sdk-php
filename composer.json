@@ -3,6 +3,7 @@
   "homepage": "https://sellerlegend.com/",
   "keywords": ["sellerlegend", "laravel"],
   "description": "Official SellerLegend SDK for Laravel applications",
+  "license": "MIT",
   "authors": [
     {
       "name": "SellerLegend",
@@ -25,7 +26,6 @@
       "SellerLegend\\Reports\\": "src/"
     }
   },
-  "license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true
 }
