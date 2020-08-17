@@ -2,6 +2,7 @@
   "name": "sellerlegend/sellerlegend-sdk-php",
   "description": "Official SellerLegend SDK for Laravel applications",
   "homepage": "https://sellerlegend.com/",
+  "version": "0.1.3",
   "keywords": ["sellerlegend", "laravel"],
   "type": "library",
   "license": "MIT",

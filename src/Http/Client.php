@@ -18,7 +18,7 @@ class Client {
     private $endpoint;
     private $authUrl = "/oauth/authorize";
     private $tokenUrl = "/oauth/token";
-    private $version = "0.1.2";
+    private $version = "0.1.3";
     private $userAgent;
 
     public function __construct($config) {
@@ -122,8 +122,16 @@ class Client {
      * @return array
      * @throws \Exception
      */
+    public function getUser(){
+        return $this->_submitCall("api/user/me");
+    }
+
+    /**
+     * @return array
+     * @throws \Exception
+     */
     public function getAccountsList() {
-        return $this->_submitCall("api/accounts-list");
+        return $this->_submitCall("api/user/accounts");
     }
 
     /**
@@ -132,7 +140,7 @@ class Client {
      * @throws \Exception
      */
     public function requestReport($data) {
-        return $this->_submitCall("api/request-report", $data, "POST");
+        return $this->_submitCall("api/reports/request", $data, "POST");
     }
 
     /**
@@ -141,7 +149,7 @@ class Client {
      * @throws \Exception
      */
     public function getReportStatus($report_id) {
-        return $this->_submitCall("api/report-status", compact("report_id"));
+        return $this->_submitCall("api/reports/status", compact("report_id"));
     }
 
     /**
@@ -150,7 +158,7 @@ class Client {
      * @throws \Exception
      */
     public function getReport($report_id) {
-        $response = $this->_submitCall("api/report-download", compact("report_id"));
+        $response = $this->_submitCall("api/reports/download", compact("report_id"));
         if ($response["success"]) {
             try {
                 $response["response"] = empty($response["response"]) ? "[]" : gzdecode($response["response"]);
