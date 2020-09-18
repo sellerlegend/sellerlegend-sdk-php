@@ -1,0 +1,13 @@
+{
+  "status": "Success",
+  "code": 200,
+  "message": "User",
+  "path": "api\/user\/me",
+  "user": {
+    "id": 100000,
+    "name": "Fxxxxx Dxxxxx",
+    "email": "fdxxxxx@domain.co",
+    "status": "ACTIVE",
+    "active": 1
+  }
+}

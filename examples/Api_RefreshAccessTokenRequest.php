@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
     "client_id"     => "CLIENT_ID",

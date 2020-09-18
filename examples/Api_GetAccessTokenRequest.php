@@ -1,11 +1,11 @@
 <?php
 
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
-    "client_id"     => "CLIENT_ID",
+    "client_id" => "CLIENT_ID",
     "client_secret" => "CLIENT_SECRET",
-    "redirect"      => "REDIRECT_PATH"
+    "redirect" => "REDIRECT_URL"
 ];
 
 $client = new Client($config);

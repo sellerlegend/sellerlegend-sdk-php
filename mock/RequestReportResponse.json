@@ -1,7 +1,0 @@
-{
-    "status": "Success",
-    "code": 200,
-    "message": "Request Submitted",
-    "path": "api\/request-report",
-    "report_id": 701158
-}

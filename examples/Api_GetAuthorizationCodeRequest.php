@@ -1,10 +1,10 @@
 <?php
 
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
-    "client_id" => "YOUR_SL_CLIENT_ID",
-    "redirect"  => "YOUR_RETURN_URL"
+    "client_id" => "CLIENT_ID",
+    "redirect"  => "RETURN_URL"
 ];
 
 $client = new Client($config);

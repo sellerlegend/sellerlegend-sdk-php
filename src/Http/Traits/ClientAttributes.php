@@ -1,6 +1,8 @@
 <?php
 
-namespace SellerLegend\Reports\Http;
+namespace SellerLegend\Http\Traits;
+
+use SellerLegend\Http\CurlRequest;
 
 trait ClientAttributes {
 

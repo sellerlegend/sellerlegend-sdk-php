@@ -1,7 +1,0 @@
-{
-    "status": "working",
-    "code": 200,
-    "message": "Report Status",
-    "path": "api\/report-status",
-    "report_id": 701158
-}

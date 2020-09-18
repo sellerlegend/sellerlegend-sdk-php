@@ -1,10 +1,10 @@
 <?php
 
-namespace SellerLegend\Reports;
+namespace SellerLegend;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 class SellerLegendServiceProvider extends ServiceProvider
 {

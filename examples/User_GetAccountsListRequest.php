@@ -1,10 +1,11 @@
 <?php
 
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
-    "client_id"     => "CLIENT_ID",
-    "access_token"  => "ACCESS_TOKEN",
+    "client_id" => "CLIENT_ID",
+    "client_secret" => "CLIENT_SECRET",
+    "refresh_token" => "REFRESH_TOKEN"
 ];
 
 $client = new Client($config);
@@ -22,6 +23,9 @@ $client = new Client($config);
  * seller_id --> The amazon registered SellerID
  */
 
-$response = $client->getAccountsList();
-
-print_r($response);
+try {
+    $response = $client->getAccountsList();
+    print_r($response);
+} catch (Exception $e) {
+    print_r($e->getMessage());
+}

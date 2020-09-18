@@ -30,7 +30,7 @@ composer require sellerlegend/sellerlegend-sdk-php
 
 ### Service Provider
 ```
-SellerLegend\Reports\SellerLegendServiceProvider::class
+SellerLegend\SellerLegendServiceProvider::class
 ```
 
 ### Publish Assets
@@ -45,7 +45,7 @@ And that's it!
 To get an authorization code you only need client id and redirect path.
 
 ```
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
     "client_id"     => "CLIENT_ID",
@@ -69,7 +69,7 @@ $request = $client->getAccessToken($request->get("code"));
 Once you have your `access_token` or the `refresh_token` you only need one of these along with client credentials to instantiate the client.
 
 ```
-use SellerLegend\Reports\Http\Client;
+use SellerLegend\Http\Client;
 
 $config = [
     "client_id"     => "CLIENT_ID",
@@ -99,14 +99,29 @@ $request = $client->getServiceStatus();
     "path": "api\/service-status"
 }
 ```
+### Get User Details
+```
+$request = $client->getUser();
+```
+```
+{
+    "id": 1xxxxx,
+    "name": "Fxxxxx Dxxxxx",
+    "email": "fdxxxxx@domain.co",
+    "status": "ACTIVE",
+    "active": 1
+}
+```
 
 ### Get Accounts List
+This method fetches list of all marketplaces connected on SellerLegend against the provided access_token
+
 ```
 $request = $client->getAccountsList();
 ```
 ```
 [{
-    "id": 100000,
+    "id": 1xxxxx,
     "country_code": "US",
     "currency_code": "USD",
     "timezone": "America\/Los_Angeles",
@@ -125,7 +140,7 @@ The request report method returns `report_id` in response, which is a required p
 
 ```
 $data = [
-    'account_id' => '100000',
+    'account_id' => '1xxxxx',
     'dps_date'   => '2020-07-01'
 ];
 
@@ -136,7 +151,7 @@ $response = $client->requestReport($data);
     "status": "Success",
     "code": 200,
     "message": "Request Submitted",
-    "path": "api\/request-report",
+    "path": "api\/report\/request",
     "report_id": 7xxxxx
 }
 ```
@@ -154,7 +169,7 @@ $response = $client->getReportStatus($report_id);
     "status": "working",
     "code": 200,
     "message": "Report Status",
-    "path": "api\/report-status",
+    "path": "api\/reports\/status",
     "report_id": 7xxxxx
 }
 ```
@@ -166,4 +181,24 @@ Retrieves `,` delimited csv report content.
 $report_id = 7xxxxx;
 
 $response = $client->getReport($report_id);
+```
+
+### Get Notifications List
+This method accepts one of the SellerLegend registered notification types and responds with the list of notifications sent during the last 24 hours using zapier notification channel. See documentation for details.
+
+```
+$notification_type = "Download Report";
+$response = $client->getNotificationsList($notification_type);
+```
+```
+[{
+  "id": 8xxx2,
+  "report_name": "US-COGS-20200827-080xxx.xlsx",
+  "type": "COGS",
+  "download_url": "https:\/\/app.sellerlegend.com\/reports\/download-report\/8xxx2",
+  "status": "done",
+  "requested_by": "Fxxxxx Dxxxxx",
+  "requested_at": "2020-08-27 08:54:36",
+  "completed_at": "2020-08-27 08:55:10"
+}]
 ```
