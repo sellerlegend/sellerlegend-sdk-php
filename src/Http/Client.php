@@ -137,14 +137,4 @@ class Client {
     public function getAccountsList() {
         return $this->_submitCall("api/user/accounts");
     }
-
-    /**
-     * @param $affiliate_id
-     * @return array
-     * @throws \Exception
-     */
-    public function postAffiliateId($affiliate_id){
-        return $this->_submitCall("api/user/update-affiliate-id", compact("affiliate_id"),
-            'POST');
-    }
 }
