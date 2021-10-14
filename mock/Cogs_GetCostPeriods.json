@@ -1,0 +1,57 @@
+[
+  {
+    "product_sku": "MyProductSKUxxx",
+    "asin": "B0xxxxxxxx",
+    "parent_asin": null,
+    "internal_name": null,
+    "title": "[product title here]",
+    "data": [
+      {
+        "dates": {
+          "from_date": "2021-01-01",
+          "to_date": "2022-12-31"
+        },
+        "cost_elements": [
+          {
+            "cost_element": "Pick and Pack",
+            "provider": "",
+            "notes": "",
+            "total_amount": 2.1,
+            "currency": "USD",
+            "conversion_rate": 1,
+            "units": 1,
+            "amount": 5.28
+          },
+          {
+            "cost_element": "Shipping Charge",
+            "provider": "",
+            "notes": "",
+            "total_amount": 3.18,
+            "currency": "USD",
+            "conversion_rate": 1,
+            "units": 1,
+            "amount": 5.28
+          }
+        ]
+      },
+      {
+        "dates": {
+          "from_date": "2020-09-01",
+          "to_date": "2020-12-31"
+        },
+        "cost_elements": [
+          {
+            "cost_element": "Delivery Charge",
+            "provider": "",
+            "notes": "",
+            "total_amount": 5.28,
+            "currency": "USD",
+            "conversion_rate": 1,
+            "units": 1,
+            "amount": 5.28
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -2,10 +2,11 @@
   "name": "sellerlegend/sellerlegend-sdk-php",
   "description": "Official SellerLegend SDK for Laravel applications",
   "homepage": "https://sellerlegend.com/",
-  "version": "0.1.4",
-  "keywords": ["sellerlegend", "laravel"],
+  "version": "1.0.0",
+  "keywords": ["sellerlegend", "sellerlegend-sdk", "sl", "laravel"],
   "type": "library",
   "license": "MIT",
+  "readme": "README.md",
   "authors": [
     {
       "name": "SellerLegend",

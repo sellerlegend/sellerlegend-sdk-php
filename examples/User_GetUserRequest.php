@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Http\Client;
+use SellerLegend\Http\UserClient;
 
 $config = [
     "client_id" => "CLIENT_ID",
@@ -8,7 +8,7 @@ $config = [
     "refresh_token" => "REFRESH_TOKEN"
 ];
 
-$client = new Client($config);
+$client = new UserClient($config);
 
 /**
  * Getting Registered Accounts List:
@@ -25,6 +25,7 @@ $client = new Client($config);
 try {
     $response = $client->getUser();
     print_r($response);
+
 } catch (Exception $e) {
     print_r($e->getMessage());
 }

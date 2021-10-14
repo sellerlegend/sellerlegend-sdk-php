@@ -1,5 +1,5 @@
 <?php
-namespace SellerLegend\Http;
+namespace SellerLegend\Http\Helpers;
 
 class CurlRequest
 {

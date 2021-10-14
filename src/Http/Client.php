@@ -2,13 +2,12 @@
 
 namespace SellerLegend\Http;
 
+use SellerLegend\Http\Helpers\CurlRequest;
 use SellerLegend\Http\Traits\ClientAttributes;
-use SellerLegend\Http\Traits\NotificationsAttributes;
-use SellerLegend\Http\Traits\ReportsAttributes;
 
 class Client {
 
-    use ClientAttributes, ReportsAttributes, NotificationsAttributes;
+    use ClientAttributes;
 
     private $config = [
         "client_id"     => null,
@@ -104,7 +103,7 @@ class Client {
         $response_array = json_decode($response["response"], true);
 
         if (is_array($response_array)) {
-            if (isset($response['success']) && $response['success']) {
+            if (isset($response["success"]) && $response["success"]) {
                 if (array_key_exists("access_token", $response_array)) {
                     $this->config["access_token"] = $response_array["access_token"];
                 }
@@ -120,21 +119,5 @@ class Client {
      */
     public function getServiceStatus() {
         return $this->_submitCall("api/service-status");
-    }
-
-    /**
-     * @return array
-     * @throws \Exception
-     */
-    public function getUser(){
-        return $this->_submitCall("api/user/me");
-    }
-
-    /**
-     * @return array
-     * @throws \Exception
-     */
-    public function getAccountsList() {
-        return $this->_submitCall("api/user/accounts");
     }
 }

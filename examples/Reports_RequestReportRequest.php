@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Http\Client;
+use SellerLegend\Http\ReportsClient;
 
 $config = [
     "client_id" => "CLIENT_ID",
@@ -8,7 +8,7 @@ $config = [
     "refresh_token" => "REFRESH_TOKEN"
 ];
 
-$client = new Client($config);
+$client = new ReportsClient($config);
 
 /**
  * Requesting Report:
@@ -33,6 +33,10 @@ $data = [
  * and download when its status is 'done'
  */
 
-$response = $client->requestReport($data);
+try {
+    $response = $client->requestReport($data);
+    print_r($response);
 
-print_r($response);
+} catch (Exception $e) {
+    print_r($e->getMessage());
+}

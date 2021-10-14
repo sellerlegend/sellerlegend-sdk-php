@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Http\Client;
+use SellerLegend\Http\ReportsClient;
 
 $config = [
     "client_id" => "CLIENT_ID",
@@ -8,7 +8,7 @@ $config = [
     "refresh_token" => "REFRESH_TOKEN"
 ];
 
-$client = new Client($config);
+$client = new ReportsClient($config);
 
 /**
  * Getting Report Status:
@@ -28,6 +28,10 @@ $report_id = "REPORT_ID";
  * cancelled --> when the request has been cancelled by the administration
  */
 
-$response = $client->getReportStatus($report_id);
+try {
+    $response = $client->getReportStatus($report_id);
+    print_r($response);
 
-print_r($response);
+} catch (Exception $e) {
+    print_r($e->getMessage());
+}

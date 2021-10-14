@@ -13,8 +13,8 @@ ext-zlib: *<br/>
 
 ## Documentation
 
-[API Reference](http://docs.sellerlegend.com)<br/>
-[Access Request](http://docs.sellerlegend.com)<br/>
+[Postman](https://documenter.getpostman.com/view/17637582/UUxwD9Ao) <br/>
+[Access Request](https://app.sellerlegend.com/account/developers) <br/>
 [Getting Started](http://docs.sellerlegend.com)
 
 ## License
@@ -101,6 +101,9 @@ $request = $client->getServiceStatus();
 ```
 ### Get User Details
 ```
+use SellerLegend\Http\UserClient;
+
+$client = new UserClient($config);
 $request = $client->getUser();
 ```
 ```
@@ -117,16 +120,20 @@ $request = $client->getUser();
 This method fetches list of all marketplaces connected on SellerLegend against the provided access_token
 
 ```
+use SellerLegend\Http\UserClient;
+
+$client = new UserClient($config);
 $request = $client->getAccountsList();
 ```
 ```
 [{
     "id": 1xxxxx,
+    "account_title": "[ACCOUNT-TITLE]",
     "country_code": "US",
     "currency_code": "USD",
     "timezone": "America\/Los_Angeles",
     "marketplace": "ATVPDKIKX0DER",
-    "seller_id": "<SELLER-ID>"
+    "seller_id": "[SELLER-ID]"
 }]
 ```
 Once you've your account id you can start making report requests using that account id.
@@ -139,6 +146,10 @@ Request report method can accept `product_sku`, `dps_date` and/or `last_updated_
 The request report method returns `report_id` in response, which is a required parameter of other report calls. 
 
 ```
+use SellerLegend\Http\ReportsClient;
+
+$client = new ReportsClient($config);
+
 $data = [
     'account_id' => '1xxxxx',
     'dps_date'   => '2020-07-01'
@@ -187,6 +198,10 @@ $response = $client->getReport($report_id);
 This method accepts one of the SellerLegend registered notification types and responds with the list of notifications sent during the last 24 hours using zapier notification channel. See documentation for details.
 
 ```
+use SellerLegend\Http\NotificationsClient;
+
+$client = new NotificationsClient($config);
+
 $notification_type = "Download Report";
 $response = $client->getNotificationsList($notification_type);
 ```

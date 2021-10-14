@@ -2,20 +2,24 @@
 
 namespace SellerLegend\Http\Traits;
 
-use SellerLegend\Http\CurlRequest;
+use Exception;
+use SellerLegend\Http\Helpers\CurlRequest;
 
 trait ClientAttributes {
 
-    private function _validateConfig(&$config) {
+    /**
+     * @throws Exception
+     */
+    private function _validateConfig(&$config): bool {
         if (is_null($config)) {
-            throw new \Exception("'config' cannot be null.");
+            throw new Exception("'config' cannot be null.");
         }
 
         foreach ($config as $key => $value) {
             if (array_key_exists($key, $this->config)) {
                 $this->config[$key] = $value;
             } else {
-                throw new \Exception("Unknown parameter '{$key}' in config.");
+                throw new Exception("Unknown parameter '{$key}' in config.");
             }
         }
 
@@ -26,7 +30,7 @@ trait ClientAttributes {
         return true;
     }
 
-    private function _getResponse(CurlRequest $request) {
+    private function _getResponse(CurlRequest $request): array {
         $response = $request->execute();
         $response_info = $request->getInfo();
         $request->close();
@@ -46,7 +50,10 @@ trait ClientAttributes {
         }
     }
 
-    private function _submitCall($interface, $params = [], $method = "GET") {
+    /**
+     * @throws Exception
+     */
+    protected function _submitCall($interface, $params = [], $method = "GET"): array {
         $headers = [
             "Authorization: Bearer {$this->config["access_token"]}",
             "Accept: application/json",
@@ -81,7 +88,7 @@ trait ClientAttributes {
                 }
                 break;
             default:
-                throw new \Exception("Unknown verb {$method}.");
+                throw new Exception("Unknown verb {$method}.");
         }
 
         $request->setOption(CURLOPT_URL, $url);

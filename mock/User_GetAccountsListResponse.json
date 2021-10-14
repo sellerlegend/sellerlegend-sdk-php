@@ -6,6 +6,7 @@
   "accounts": [
     {
       "id": 100000,
+      "account_title": "MyAccountTitle (US)",
       "country_code": "US",
       "currency_code": "USD",
       "timezone": "America\/Los_Angeles",
@@ -14,6 +15,7 @@
     },
     {
       "id": 100001,
+      "account_title": "MyAccountTitle (UK)",
       "country_code": "UK",
       "currency_code": "GBP",
       "timezone": "Europe\/Paris",
@@ -22,6 +24,7 @@
     },
     {
       "id": 100002,
+      "account_title": "MyAccountTitle (DE)",
       "country_code": "DE",
       "currency_code": "EUR",
       "timezone": "Europe\/Paris",
@@ -30,6 +33,7 @@
     },
     {
       "id": 100003,
+      "account_title": "MyAccountTitle (ES)",
       "country_code": "ES",
       "currency_code": "EUR",
       "timezone": "Europe\/Paris",
@@ -38,6 +42,7 @@
     },
     {
       "id": 100004,
+      "account_title": "MyAccountTitle (FR)",
       "country_code": "FR",
       "currency_code": "EUR",
       "timezone": "Europe\/Paris",

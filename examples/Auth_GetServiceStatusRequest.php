@@ -16,6 +16,11 @@ $client = new Client($config);
  * if the service is up and running
  */
 
-$response = $client->getServiceStatus();
+try {
+    $response = $client->getServiceStatus();
+    print_r($response);
 
-print_r($response);
+} catch (Exception $e) {
+    print_r($e->getMessage());
+}
+

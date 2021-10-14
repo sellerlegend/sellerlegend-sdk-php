@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Http\Client;
+use SellerLegend\Http\NotificationsClient;
 
 $config = [
     "client_id" => "CLIENT_ID",
@@ -8,7 +8,7 @@ $config = [
     "refresh_token" => "REFRESH_TOKEN"
 ];
 
-$client = new Client($config);
+$client = new NotificationsClient($config);
 
 /**
  * Getting Zapier Enabled Notifications List:
@@ -39,6 +39,7 @@ try {
     $notification_type = "Download Report";
     $response = $client->getNotificationsList($notification_type);
     print_r($response);
+
 } catch (Exception $e) {
     print_r($e->getMessage());
 }

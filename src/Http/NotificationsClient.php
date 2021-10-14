@@ -1,16 +1,17 @@
 <?php
 
-namespace SellerLegend\Http\Traits;
+namespace SellerLegend\Http;
 
-trait NotificationsAttributes {
+use Exception;
+
+class NotificationsClient extends Client {
 
     /**
      * @param string $notification_type
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function getNotificationsList($notification_type) {
         return $this->_submitCall("api/notifications/list", compact("notification_type"));
     }
-
 }

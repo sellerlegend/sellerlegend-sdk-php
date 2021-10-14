@@ -1,0 +1,6 @@
+{
+  "status": "Success",
+  "code": 200,
+  "message": "Updates are enqueued",
+  "path": "api/cogs/cost-periods"
+}
