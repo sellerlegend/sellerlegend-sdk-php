@@ -7,16 +7,37 @@ use Exception;
 class SalesClient extends Client {
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByID($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesPerDayPerProduct(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
+        return $this->_submitCall("api/sales/per-day-per-product", [
+            "seller_id"      => $seller_id,
+            "marketplace_id" => $marketplace_id,
+            "start_date"     => $start_date,
+            "end_date"       => $end_date,
+            "per_page"       => $per_page,
+            "page"           => $page,
+        ]);
+    }
+
+    /**
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
+     * @param int $page
+     * @param int $per_page
+     * @return array
+     * @throws Exception
+     */
+    public function getSalesStatisticsByID(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -30,16 +51,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsBySKU($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsBySKU(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -53,16 +74,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByASIN($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByASIN(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -76,16 +97,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByParentASIN($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByParentASIN(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -99,16 +120,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByBrand($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByBrand(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -122,16 +143,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByProductGroup($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByProductGroup(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -145,16 +166,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByDay($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByDay(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -168,16 +189,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByWeek($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByWeek(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -191,16 +212,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByMonth($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByMonth(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -214,16 +235,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByQuarter($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByQuarter(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -237,16 +258,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsBySemester($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsBySemester(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
@@ -260,16 +281,16 @@ class SalesClient extends Client {
     }
 
     /**
-     * @param $seller_id
-     * @param $marketplace_id
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
      * @param int $page
-     * @param null $start_date
-     * @param null $end_date
      * @param int $per_page
      * @return array
      * @throws Exception
      */
-    public function getSalesStatisticsByYear($seller_id, $marketplace_id, $start_date = null, $end_date = null, int $page = 1, int $per_page = 500) {
+    public function getSalesStatisticsByYear(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/statistics-dashboard", [
             "seller_id"      => $seller_id,
             "marketplace_id" => $marketplace_id,
