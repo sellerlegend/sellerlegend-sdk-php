@@ -3,7 +3,7 @@
 use SellerLegend\Http\UserClient;
 
 $config = [
-    "client_id" => "CLIENT_ID",
+    "client_id"     => "CLIENT_ID",
     "client_secret" => "CLIENT_SECRET",
     "refresh_token" => "REFRESH_TOKEN"
 ];

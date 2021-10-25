@@ -1,17 +1,15 @@
 <?php
+
 namespace SellerLegend\Http\Helpers;
 
-class CurlRequest
-{
+class CurlRequest {
     private $handle = null;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->reset();
     }
 
-    public function reset()
-    {
+    public function reset() {
         $this->handle = curl_init();
         curl_setopt($this->handle, CURLOPT_PORT, 443);
         curl_setopt($this->handle, CURLOPT_SSL_VERIFYPEER, true);
@@ -23,28 +21,23 @@ class CurlRequest
         }
     }
 
-    public function setOption($name, $value)
-    {
+    public function setOption($name, $value) {
         curl_setopt($this->handle, $name, $value);
     }
 
-    public function execute()
-    {
+    public function execute() {
         return curl_exec($this->handle);
     }
 
-    public function getInfo()
-    {
+    public function getInfo() {
         return curl_getinfo($this->handle);
     }
 
-    public function getError()
-    {
+    public function getError() {
         return curl_error($this->handle);
     }
 
-    public function close()
-    {
+    public function close() {
         curl_close($this->handle);
     }
 }

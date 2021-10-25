@@ -121,7 +121,7 @@ class CogsClient extends Client {
      * @return $this
      */
     public function setCostElement(string $from_date, string $to_date, string $cost_element, ?string $provider, ?string $notes,
-                                   float $total_amount, float $amount, string $currency, int $units = 1, $conversion_rate = 1) {
+                                   float  $total_amount, float $amount, string $currency, int $units = 1, $conversion_rate = 1) {
 
         if (!isset($this->cost_elements[$from_date . "_" . $to_date])) {
             $this->cost_elements[$from_date . "_" . $to_date] = [

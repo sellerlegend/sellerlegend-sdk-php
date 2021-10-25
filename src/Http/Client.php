@@ -2,6 +2,7 @@
 
 namespace SellerLegend\Http;
 
+use Exception;
 use SellerLegend\Http\Helpers\CurlRequest;
 use SellerLegend\Http\Traits\ClientAttributes;
 
@@ -21,7 +22,7 @@ class Client {
     private $endpoint;
     private $authUrl = "/oauth/authorize";
     private $tokenUrl = "/oauth/token";
-    private $version = "0.1.4";
+    private $version = "1.0.3";
     private $userAgent;
 
     public function __construct($config) {
@@ -115,7 +116,7 @@ class Client {
 
     /**
      * @return array
-     * @throws \Exception
+     * @throws Exception
      */
     public function getServiceStatus() {
         return $this->_submitCall("api/service-status");

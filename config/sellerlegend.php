@@ -7,7 +7,7 @@ return [
      * If you have not created one, please follow the documentation
      *
      */
-    'client_id' => env('SL_CLIENT_ID'),
+    'client_id'     => env('SL_CLIENT_ID'),
 
     /**
      * The CLIENT-SECRET configured on SellerLegend
@@ -24,7 +24,7 @@ return [
      * This is the path of SellerLegend API consuming app - your app
      * The redirect-path here should match the one you specified at SellerLegend's interface
      */
-    'redirect' => env('SL_REDIRECT', 'https://your-app.com'),
+    'redirect'      => env('SL_REDIRECT', 'https://your-app.com'),
 
     /**
      * The SellerLegend application endpoint
@@ -32,7 +32,7 @@ return [
      * The default endpoint is https://app.sellerlegend.com
      * The users of application's retail version do not need to modify endpoint
      */
-    'api_endpoint' => env('SL_API_ENDPOINT', 'https://app.sellerlegend.com'),
+    'api_endpoint'  => env('SL_API_ENDPOINT', 'https://app.sellerlegend.com'),
 
     /**
      * The ACCESS-TOKEN issued by SellerLegend
@@ -41,7 +41,7 @@ return [
      * If you haven't got any access token yet, use SellerLegend Client to get the access-token
      *
      */
-    'access_token' => env('SL_ACCESS_TOKEN', null),
+    'access_token'  => env('SL_ACCESS_TOKEN', null),
 
     /**
      * The REFRESH-TOKEN issued by SellerLegend

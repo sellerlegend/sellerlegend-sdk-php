@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Http\Request;
 use SellerLegend\Http\Client;
 
 $config = [
-    "client_id" => "CLIENT_ID",
+    "client_id"     => "CLIENT_ID",
     "client_secret" => "CLIENT_SECRET",
-    "redirect" => "REDIRECT_URL"
+    "redirect"      => "REDIRECT_URL"
 ];
 
 $client = new Client($config);
@@ -20,10 +21,10 @@ $client = new Client($config);
  */
 
 throw_unless(
-    \Illuminate\Http\Request::get("state") == "YOUR_STRING",
+    Request::get("state") == "YOUR_STRING",
     InvalidArgumentException::class
 );
 
-$response = $client->getAccessToken(\Illuminate\Http\Request::get("code"));
+$response = $client->getAccessToken(Request::get("code"));
 
 print_r($response);
