@@ -39,6 +39,27 @@ class SalesClient extends Client {
      * @return array
      * @throws Exception
      */
+    public function getTransactions(string $seller_id, string $marketplace_id, string $start_date = null, string $end_date = null, int $page = 1, int $per_page = 500) {
+        return $this->_submitCall("api/sales/transactions", [
+            "seller_id"      => $seller_id,
+            "marketplace_id" => $marketplace_id,
+            "start_date"     => $start_date,
+            "end_date"       => $end_date,
+            "per_page"       => $per_page,
+            "page"           => $page,
+        ]);
+    }
+
+    /**
+     * @param string $seller_id
+     * @param string $marketplace_id
+     * @param string|null $start_date
+     * @param string|null $end_date
+     * @param int $page
+     * @param int $per_page
+     * @return array
+     * @throws Exception
+     */
     public function getSalesPerDayPerProduct(string $seller_id, string $marketplace_id, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
         return $this->_submitCall("api/sales/per-day-per-product", [
             "seller_id"      => $seller_id,

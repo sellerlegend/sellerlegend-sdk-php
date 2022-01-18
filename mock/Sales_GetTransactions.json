@@ -1,0 +1,48 @@
+{
+  "current_page": 1,
+  "data": [
+    {
+      "posted_at": "2022-01-01 00:03:20",
+      "amazon_order_id": null,
+      "account_title": "some text here",
+      "marketplace": "US",
+      "asin": "B0xxxxxxxx",
+      "amount": 10.01,
+      "event_type": "Adjustment",
+      "amount_category": "WarehouseDamage",
+      "transaction_type": "Fees",
+      "currency": "USD"
+    },
+    {
+      "posted_at": "2022-01-01 00:10:55",
+      "amazon_order_id": "1xx-xxxxxxx-xxxxxxx",
+      "account_title": "some text here",
+      "marketplace": "US",
+      "asin": "B0xxxxxxxx",
+      "amount": 14.95,
+      "event_type": "Shipment",
+      "amount_category": "Principal",
+      "transaction_type": "Charges",
+      "currency": "USD"
+    },
+    {
+      "posted_at": "2022-01-01 00:10:55",
+      "amazon_order_id": "1xx-xxxxxxx-xxxxxxx",
+      "account_title": "some text here",
+      "marketplace": "US",
+      "asin": "B0xxxxxxxx",
+      "amount": -2.7,
+      "event_type": "Shipment",
+      "amount_category": "FBAPerUnitFulfillmentFee",
+      "transaction_type": "Fees",
+      "currency": "USD"
+    }
+  ],
+  "first_page_url": "https://app.sellerlegend.com/api/sales/transactions?seller_id=A2xxxxxxxxxxxx&marketplace_id=A1F83G8C2ARO7P&start_date=2022-01-01%2000%3A00%3A00&end_date=2022-01-01%2000%3A29%3A59&per_page=500&page=1",
+  "from": 1,
+  "next_page_url": null,
+  "path": "https://app.sellerlegend.com/api/sales/transactions",
+  "per_page": "500",
+  "prev_page_url": null,
+  "to": 1290
+}
