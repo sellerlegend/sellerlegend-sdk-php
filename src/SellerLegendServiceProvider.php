@@ -12,7 +12,7 @@ class SellerLegendServiceProvider extends ServiceProvider {
      *
      * @var string
      */
-    const VERSION = '1.0.3';
+    const VERSION = '1.0.4';
 
     /**
      * Bootstrap services.

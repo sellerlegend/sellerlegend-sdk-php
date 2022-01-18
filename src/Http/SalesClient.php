@@ -9,6 +9,29 @@ class SalesClient extends Client {
     /**
      * @param string $seller_id
      * @param string $marketplace_id
+     * @param string|null $amazon_order_id
+     * @param string|null $start_date
+     * @param string|null $end_date
+     * @param int $page
+     * @param int $per_page
+     * @return array
+     * @throws Exception
+     */
+    public function getOrders(string $seller_id, string $marketplace_id, ?string $amazon_order_id = null, ?string $start_date = null, ?string $end_date = null, int $page = 1, int $per_page = 500) {
+        $amazon_order_id = $amazon_order_id ? ["amazon_order_id" => $amazon_order_id] : [];
+        return $this->_submitCall("api/sales/orders", array_merge([
+            "seller_id"      => $seller_id,
+            "marketplace_id" => $marketplace_id,
+            "start_date"     => $start_date,
+            "end_date"       => $end_date,
+            "per_page"       => $per_page,
+            "page"           => $page,
+        ], $amazon_order_id));
+    }
+
+    /**
+     * @param string $seller_id
+     * @param string $marketplace_id
      * @param string|null $start_date
      * @param string|null $end_date
      * @param int $page
