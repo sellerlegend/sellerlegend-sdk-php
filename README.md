@@ -202,7 +202,7 @@ use SellerLegend\Http\NotificationsClient;
 
 $client = new NotificationsClient($config);
 
-$notification_type = "Download Report";
+$notification_type = "Export Report";
 $response = $client->getNotificationsList($notification_type);
 ```
 ```

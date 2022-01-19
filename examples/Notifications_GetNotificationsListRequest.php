@@ -20,23 +20,24 @@ $client = new NotificationsClient($config);
  * | Zapier Notification Types       |
  * |---------------------------------|
  * | Download Charge Invoices        |
- * | Download Report                 |
- * | Download Report Failure         |
  * | Excessive Order Quantity        |
+ * | Export Report                   |
+ * | Export Report Failure           |
  * | Feedback Notification           |
+ * | Import Report                   |
  * | Inventory Alerts (on days)      |
  * | Inventory Alerts (on units)     |
  * | Listing Changes                 |
  * | Loss Of Buybox                  |
  * | Orders by Watchlisted Customers |
+ * | Restock Suggestions             |
  * | Returns                         |
  * | Suppressed Listings             |
- * | Upload Report                   |
  * +---------------------------------+
  */
 
 try {
-    $notification_type = "Download Report";
+    $notification_type = "Export Report";
     $response = $client->getNotificationsList($notification_type);
     print_r($response);
 
