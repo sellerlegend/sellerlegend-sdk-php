@@ -137,7 +137,7 @@ $request = $client->getAccountsList();
 }]
 ```
 ### Get Connections List
-This method returns a list of Amazon connections that exist between SellerLegend and the Amazon Selling Partner API and the Amazon Advertising API. With connection token status and details about all connected marketplaces.
+This method returns a list of Amazon connections between SellerLegend and the Amazon Selling Partner API and the Amazon Advertising API. With connection token status and details about all connected marketplaces.
 
 ```
 use SellerLegend\Http\ConnectionsClient;
