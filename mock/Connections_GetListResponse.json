@@ -1,0 +1,83 @@
+{
+  "status": "Success",
+  "code": 200,
+  "message": "Connections List",
+  "path": "api\/connections\/list",
+  "connections": [
+    {
+      "account_title": "MyAccountTitle (Europe)",
+      "seller_id": "<SELLER-ID>",
+      "region": "Europe",
+      "sp": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T06:58:53Z",
+        "brand_analytics_access": true
+      },
+      "ppc": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T04:25:53Z"
+      },
+      "marketplaces": {
+        "DE": {
+          "account_title": "MyAccountTitle 2 (ES)",
+          "country": "DE",
+          "marketplace_id": "A1RKKUPIHCS9HS",
+          "status": "ONBOARDED",
+          "account_updates": {
+            "orders_updated_at": "2023-04-01T00:10:53Z",
+            "products_updated_at": "2023-04-02T01:30:20Z",
+            "finances_updated_at": "2023-04-02T02:00:24Z",
+            "inventory_updated_at": "2023-04-02T03:50:43Z"
+          }
+        },
+        "ES": {
+          "status": "NOT_STARTED_BY_USER"
+        }
+      }
+    },
+    {
+      "account_title": "MyAccountTitle 2 (Europe)",
+      "seller_id": "<SELLER-ID>",
+      "region": "Europe",
+      "sp": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T06:58:53Z",
+        "brand_analytics_access": false
+      },
+      "ppc": {
+        "status": "CONNECTED",
+        "last_connected_at": "2021-11-02T06:58:53Z"
+      },
+      "marketplaces": {
+        "DE": {
+          "status": "NOT_STARTED_BY_USER"
+        },
+        "ES": {
+          "account_title": "MyAccountTitle 2 (ES)",
+          "country": "ES",
+          "marketplace_id": "A1RKKUPIHCS9HS",
+          "status": "ONBOARDING_3_MONTHS",
+          "onboarding_progress": {
+            "orders": "0%",
+            "inventory": "0%",
+            "finances": "0%",
+            "bsr": "0%",
+            "product_history": "0%"
+          }
+        }
+      }
+    },
+    {
+      "account_title": "MyAccountTitle 3 (US)",
+      "seller_id": "<SELLER-ID>",
+      "region": "North America",
+      "sp": {
+        "status": "NOT_CONNECTED"
+      },
+      "ppc": {
+        "status": "NOT_CONNECTED"
+      },
+      "marketplaces": []
+    }
+  ]
+}

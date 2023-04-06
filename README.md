@@ -217,3 +217,46 @@ $response = $client->getNotificationsList($notification_type);
   "completed_at": "2020-08-27 08:55:10"
 }]
 ```
+
+### Get Connections List
+This method fetches list of amazon connections between SellerLegend with Amazon Selling Partner API and Amazon Advertising API token status and respective marketplace's information.
+
+```
+use SellerLegend\Http\ConnectionsClient;
+
+$client = new ConnectionsClient($config);
+$response = $client->getConnectionsList();
+```
+```
+[{
+    "account_title": "MyAccountTitle (Europe)",
+    "seller_id": "<SELLER-ID>",
+    "region": "Europe",
+    "sp": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T06:58:53Z",
+        "brand_analytics_access": true
+    },
+    "ppc": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T04:25:53Z"
+    },
+    "marketplaces": {
+        "DE": {
+            "account_title": "MyAccountTitle 2 (ES)",
+            "country": "DE",
+            "marketplace_id": "A1RKKUPIHCS9HS",
+            "status": "ONBOARDED",
+            "account_updates": {
+                "orders_updated_at": "2023-04-01T00:10:53Z",
+                "products_updated_at": "2023-04-02T01:30:20Z",
+                "finances_updated_at": "2023-04-02T02:00:24Z",
+                "inventory_updated_at": "2023-04-02T03:50:43Z"
+            }
+        },
+        "ES": {
+          "status": "NOT_STARTED_BY_USER"
+        }
+    }
+}]
+```
