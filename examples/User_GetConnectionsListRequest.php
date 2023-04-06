@@ -1,6 +1,6 @@
 <?php
 
-use SellerLegend\Http\ConnectionsClient;
+use SellerLegend\Http\UserClient;
 
 $config = [
     "client_id"     => "CLIENT_ID",
@@ -8,7 +8,7 @@ $config = [
     "refresh_token" => "REFRESH_TOKEN"
 ];
 
-$client = new ConnectionsClient($config);
+$client = new UserClient($config);
 
 /**
  * Getting Amazon Connections List:
