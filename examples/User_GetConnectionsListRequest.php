@@ -18,10 +18,12 @@ $client = new UserClient($config);
  * seller_id --> The amazon registered SellerID
  * region --> The marketplace's region
  * sp --> status --> The status of Amazon selling partner API
- * sp --> last_connected_at --> Timestamp when sp_api token updated
+ * sp --> last_connected_at --> Timestamp when sp_api token was updated
+ * sp --> last_refreshed_at --> Timestamp when sp_api token was refreshed
  * sp --> brand_analytics_access --> Does account has access to sales_traffic_report, true | false
  * ppc --> status --> The status of Amazon advertising partner API
- * ppc --> last_connected_at --> Timestamp when ppc token updated
+ * ppc --> last_connected_at --> Timestamp when ppc token was updated
+ * ppc --> last_refreshed_at --> Timestamp when ppc token was refreshed
  * Marketplace's List
  * A list of all marketplaces with account_title, marketplace_id, status, onboarding_progress (if account is still in onboarding phase) or account_updates (if account is onboarded)
  */
