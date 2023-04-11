@@ -153,11 +153,13 @@ $response = $client->getConnectionsList();
     "sp": {
         "status": "CONNECTED",
         "last_connected_at": "2023-03-26T06:58:53Z",
+        "last_refreshed_at": "2023-04-10T02:10:23Z",
         "brand_analytics_access": true
     },
     "ppc": {
         "status": "CONNECTED",
-        "last_connected_at": "2023-03-26T04:25:53Z"
+        "last_connected_at": "2023-03-26T04:25:53Z",
+        "last_refreshed_at": "2023-04-10T02:10:23Z",
     },
     "marketplaces": {
         "DE": {
@@ -169,7 +171,8 @@ $response = $client->getConnectionsList();
                 "orders_updated_at": "2023-04-01T00:10:53Z",
                 "products_updated_at": "2023-04-02T01:30:20Z",
                 "finances_updated_at": "2023-04-02T02:00:24Z",
-                "inventory_updated_at": "2023-04-02T03:50:43Z"
+                "inventory_updated_at": "2023-04-02T03:50:43Z",
+                "ppc_updated_at": "2023-04-06T07:00:23Z"
             }
         },
         "ES": {
