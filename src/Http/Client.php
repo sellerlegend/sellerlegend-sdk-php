@@ -22,7 +22,7 @@ class Client {
     private $endpoint;
     private $authUrl = "/oauth/authorize";
     private $tokenUrl = "/oauth/token";
-    private $version = "1.0.5";
+    private $version = "1.0.6";
     private $userAgent;
 
     public function __construct($config) {

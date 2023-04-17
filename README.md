@@ -136,6 +136,51 @@ $request = $client->getAccountsList();
     "seller_id": "[SELLER-ID]"
 }]
 ```
+### Get Connections List
+This method returns a list of Amazon connections between SellerLegend and the Amazon Selling Partner API and the Amazon Advertising API. With connection token status and details about all connected marketplaces.
+
+```
+use SellerLegend\Http\UserClient;
+
+$client = new UserClient($config);
+$response = $client->getConnectionsList();
+```
+```
+[{
+    "account_title": "MyAccountTitle (Europe)",
+    "seller_id": "<SELLER-ID>",
+    "region": "Europe",
+    "sp": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T06:58:53Z",
+        "last_refreshed_at": "2023-04-10T02:10:23Z",
+        "brand_analytics_access": true
+    },
+    "ppc": {
+        "status": "CONNECTED",
+        "last_connected_at": "2023-03-26T04:25:53Z",
+        "last_refreshed_at": "2023-04-10T02:10:23Z",
+    },
+    "marketplaces": {
+        "DE": {
+            "account_title": "MyAccountTitle 2 (ES)",
+            "country": "DE",
+            "marketplace_id": "A1RKKUPIHCS9HS",
+            "status": "ONBOARDED",
+            "account_updates": {
+                "orders_updated_at": "2023-04-01T00:10:53Z",
+                "products_updated_at": "2023-04-02T01:30:20Z",
+                "finances_updated_at": "2023-04-02T02:00:24Z",
+                "inventory_updated_at": "2023-04-02T03:50:43Z",
+                "ppc_updated_at": "2023-04-06T07:00:23Z"
+            }
+        },
+        "ES": {
+          "status": "NOT_STARTED_BY_USER"
+        }
+    }
+}]
+```
 Once you've your account id you can start making report requests using that account id.
 
 ## Example API Calls

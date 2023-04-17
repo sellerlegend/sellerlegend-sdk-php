@@ -21,4 +21,12 @@ class UserClient extends Client {
     public function getAccountsList() {
         return $this->_submitCall("api/user/accounts");
     }
+
+    /**
+     * @return array
+     * @throws Exception
+     */
+    public function getConnectionsList() {
+        return $this->_submitCall("api/connections/list");
+    }
 }
